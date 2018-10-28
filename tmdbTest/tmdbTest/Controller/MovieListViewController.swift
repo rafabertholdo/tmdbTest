@@ -23,7 +23,7 @@ class MovieListViewController: UIViewController, ViewCustomizable {
         searchController.searchBar.placeholder = "Search Movie"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.white
 
         mainView.dataSource = self
         mainView.delegate = self
@@ -69,8 +69,8 @@ extension MovieListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView,
-                                 didEndDisplaying cell: UICollectionViewCell,
-                                 forItemAt indexPath: IndexPath) {
+                        didEndDisplaying cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         guard let movieCell = cell as? MovieCollectionViewCell else { return }
         movieCell.cover.af_cancelImageRequest()
     }
@@ -130,7 +130,7 @@ extension MovieListViewController: UISearchResultsUpdating {
                 }
             }
         } else {
-            if (model.isSearching()) {
+            if model.isSearching() {
                 model.searchTerm = nil
                 fetchMovies()
             }

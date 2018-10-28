@@ -321,6 +321,7 @@
 				DA44265F21835735003DB085 /* Frameworks */,
 				DA44266021835735003DB085 /* Resources */,
 				C6BEDB8F5418EA47571EAF06 /* [CP] Embed Pods Frameworks */,
+				DA45A19A21865A4D00219DCB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -529,6 +530,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tmdbTest/Pods-tmdbTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DA45A19A21865A4D00219DCB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

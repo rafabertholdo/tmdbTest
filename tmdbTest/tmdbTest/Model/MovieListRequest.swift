@@ -13,7 +13,7 @@ struct MovieListRequest: Codable {
     var apiKey: String
     var page: Int
     
-    init(apiKey: String, page:Int) {
+    init(apiKey: String, page: Int) {
         self.apiKey = apiKey
         self.page = page
     }
