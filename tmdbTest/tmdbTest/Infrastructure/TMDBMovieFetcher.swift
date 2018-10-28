@@ -37,6 +37,11 @@ class TMDBMovieFetcher: MovieFetcher {
         self.backendClient = backendClient
     }
     
+    /// Fetch upcoming movies with pagination
+    ///
+    /// - Parameters:
+    ///   - model: domain model
+    ///   - completion: callback
     func upcomingMovies(model: UpcomingMovies, completion: @escaping MovieListCallback) {
         let request = MovieListRequest(apiKey: Constants.apiSecret, page: model.currentPage)
         backendClient.request(Constants.upcomingEndpoint, method: .get, parameters: request) { [weak self] (callback) in
@@ -44,7 +49,12 @@ class TMDBMovieFetcher: MovieFetcher {
         }
     }
     
-    func moviesResponse(_ callback: @escaping () throws -> NetworkData?, completion: @escaping MovieListCallback) {
+    /// Movie list response handler
+    ///
+    /// - Parameters:
+    ///   - callback: api callback
+    ///   - completion: domain callback
+    private func moviesResponse(_ callback: @escaping () throws -> NetworkData?, completion: @escaping MovieListCallback) {
         do {
             guard let result = try callback() else {
                 throw ApiError.emptyResponse
@@ -64,11 +74,19 @@ class TMDBMovieFetcher: MovieFetcher {
         }
     }
     
+    /// Fill url data to Movies so the UI can issue requests to get posters
+    ///
+    /// - Parameter movie: movie
     fileprivate func resolveURLs(_ movie: inout Movie) {
         movie.posterPath = movie.posterPath != nil ? Constants.posterBaseUrl + movie.posterPath! : nil
         movie.backdropPath = movie.backdropPath != nil ? Constants.bannerBaseUrl + movie.backdropPath! : nil
     }
     
+    /// Fetches movie details
+    ///
+    /// - Parameters:
+    ///   - movieIdentifier: id
+    ///   - completion: domain completion
     func movieDetails(movieIdentifier: Int, completion: @escaping MovieDetailsCallback) {
         let request = MovieRequest(apiKey: Constants.apiSecret)
         backendClient.request(Constants.movieEndpoint + String(movieIdentifier), method: .get, parameters: request) { [weak self] (callback) in
@@ -87,6 +105,11 @@ class TMDBMovieFetcher: MovieFetcher {
         }
     }
     
+    /// Serches a movie by search term and current page
+    ///
+    /// - Parameters:
+    ///   - model: domain model
+    ///   - completion: domain completion
     func searchMovie(model: UpcomingMovies, completion: @escaping MovieListCallback) {
         let request = SearchMovieRequest(apiKey: Constants.apiSecret, searchTerm: model.searchTerm ?? "", page: model.currentPage)
         backendClient.request(Constants.searchEndpoint, method: .get, parameters: request) { [weak self] (callback) in

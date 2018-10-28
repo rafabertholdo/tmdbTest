@@ -25,14 +25,21 @@ class UpcomingMovies {
         self.movieFetcher = movieFetcher
     }
     
+    /// Reset movie data
     func clearMovies() {
         self.movies = []
     }
     
+    /// Checks if a search is being made
+    ///
+    /// - Returns: true if is searching
     func isSearching() -> Bool {
         return !(searchTerm ?? "").isEmpty
     }
     
+    /// Fetches movies and concatenates the results with the list of current movies
+    ///
+    /// - Parameter completion: UI completion
     func fetchMovies(_ completion: @escaping FetchMoviesCompletion) {
         movieFetcher.upcomingMovies(model: self) { [weak self] (movieListCompletion) in
             do {
@@ -47,6 +54,9 @@ class UpcomingMovies {
         }
     }
     
+    /// Fetches movies by search term and concatenates the results with the list of current movies
+    ///
+    /// - Parameter completion: UI completion
     func searchMovie(_ completion: @escaping FetchMoviesCompletion) {
         movieFetcher.searchMovie(model: self) { [weak self] (movieListCompletion) in
             do {
@@ -61,6 +71,9 @@ class UpcomingMovies {
         }
     }
     
+    /// Increments de current page and issues a request to the appropriated function
+    ///
+    /// - Parameter completion: UI completion
     func loadNextPage(_ completion: @escaping FetchMoviesCompletion) {
         currentPage += 1
         if isSearching() {

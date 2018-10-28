@@ -22,6 +22,9 @@ class MovieDetails: NSObject {
         self.movieFetcher = movieFetcher
     }
     
+    /// Issues a request to the backend to get the movie details
+    ///
+    /// - Parameter completion: UI completion
     func fetchMovieDetails(_ completion: @escaping FetchMoviesCompletion) {
         movieFetcher.movieDetails(movieIdentifier: identifier) { (movieDetailsCompletion) in
             do {
