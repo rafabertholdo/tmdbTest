@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Movie: Codable {
+struct Movie: Encodable {
     
     var identifier: Int?
     var voteAverage: Double?
@@ -34,5 +34,25 @@ struct Movie: Codable {
         case releaseDate = "release_date"
         case genres
         case runtime
+    }
+}
+
+extension Movie: Decodable {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        identifier = try values.decodeIfPresent(Int.self, forKey: .identifier)
+        
+        voteAverage = try values.decodeIfPresent(Double.self, forKey: .voteAverage)
+        title = try values.decodeIfPresent(String.self, forKey: .title)
+        originalTitle = try values.decodeIfPresent(String.self, forKey: .originalTitle)
+        popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
+        posterPath = try values.decodeIfPresent(String.self, forKey: .posterPath)
+        backdropPath = try values.decodeIfPresent(String.self, forKey: .backdropPath)
+        overview = try values.decodeIfPresent(String.self, forKey: .overview)
+        
+        genres = try values.decodeIfPresent([Genre].self, forKey: .genres)
+        runtime = try values.decodeIfPresent(Int.self, forKey: .runtime)
+        
+        releaseDate = try values.decodeIfPresent(String.self, forKey: .releaseDate)?.toDate()
     }
 }

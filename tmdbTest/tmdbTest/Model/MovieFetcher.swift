@@ -14,4 +14,5 @@ typealias MovieDetailsCallback = (@escaping () throws -> Movie?) -> Void
 protocol MovieFetcher {
     func upcomingMovies(model: UpcomingMovies, completion: @escaping MovieListCallback)
     func movieDetails(movieIdentifier: Int, completion: @escaping MovieDetailsCallback)
+    func searchMovie(model: UpcomingMovies, completion: @escaping MovieListCallback)
 }

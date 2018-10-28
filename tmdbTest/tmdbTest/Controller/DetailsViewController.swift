@@ -28,9 +28,4 @@ class DetailsViewController: UIViewController, Identifiable, ViewCustomizable {
             }
         })
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = ""
-    }
 }

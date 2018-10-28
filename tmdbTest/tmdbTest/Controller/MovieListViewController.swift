@@ -13,23 +13,23 @@ class MovieListViewController: UIViewController, ViewCustomizable {
 
     var model = UpcomingMovies()
     var selectedMovieId: Int?
+    let searchController = UISearchController(searchResultsController: nil)
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Movie"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
+
         mainView.dataSource = self
         mainView.delegate = self
         mainView.setLoadingScreen(navigationController: navigationController)
-        model.fetchMovies { [weak self] (completion) in
-            defer {
-                self?.mainView.removeLoadingScreen()
-            }
-            do {
-                try completion()
-                self?.mainView.reloadData()
-            } catch {
-                
-            }
-        }
+
+        fetchMovies()
     }
 }
 
@@ -94,5 +94,46 @@ extension MovieListViewController: UICollectionViewDataSource {
         selectedMovieId = movie.identifier
         performSegue(withIdentifier: DetailsViewController.segueIdentifier,
                      sender: self)
+    }
+}
+
+extension MovieListViewController: UISearchResultsUpdating {
+
+    fileprivate func fetchMovies() {
+        model.clearMovies()
+        model.fetchMovies { [weak self] (completion) in
+            defer {
+                self?.mainView.removeLoadingScreen()
+            }
+            do {
+                try completion()
+                self?.mainView.reloadData()
+            } catch {
+                
+            }
+        }
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchTerm = searchController.searchBar.text,
+            !searchTerm.isEmpty {
+            model.searchTerm = searchController.searchBar.text
+            model.searchMovie { [weak self] (completion) in
+                defer {
+                    self?.mainView.removeLoadingScreen()
+                }
+                do {
+                    try completion()
+                    self?.mainView.reloadData()
+                } catch {
+                    
+                }
+            }
+        } else {
+            if (model.isSearching()) {
+                model.searchTerm = nil
+                fetchMovies()
+            }
+        }
     }
 }

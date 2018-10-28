@@ -11,13 +11,26 @@ import UIKit
 typealias FetchMoviesCompletion = (@escaping () throws -> Void) -> Void
 
 class UpcomingMovies {
-    var movies: [Movie] = []
-    var searchTerm: String?
-    var currentPage = 1
+    private(set) var movies: [Movie] = []
+    var searchTerm: String? {
+        didSet {
+            clearMovies()
+            currentPage = 1
+        }
+    }
+    private(set) var currentPage = 1
     private var movieFetcher: MovieFetcher
     
     init(movieFetcher: MovieFetcher = TMDBMovieFetcher()) {
         self.movieFetcher = movieFetcher
+    }
+    
+    func clearMovies() {
+        self.movies = []
+    }
+    
+    func isSearching() -> Bool {
+        return !(searchTerm ?? "").isEmpty
     }
     
     func fetchMovies(_ completion: @escaping FetchMoviesCompletion) {
@@ -34,8 +47,26 @@ class UpcomingMovies {
         }
     }
     
+    func searchMovie(_ completion: @escaping FetchMoviesCompletion) {
+        movieFetcher.searchMovie(model: self) { [weak self] (movieListCompletion) in
+            do {
+                let movieList = try movieListCompletion()
+                if let movies = movieList?.results {
+                    self?.movies.append(contentsOf: movies)
+                }
+                completion { }
+            } catch {
+                completion { throw error }
+            }
+        }
+    }
+    
     func loadNextPage(_ completion: @escaping FetchMoviesCompletion) {
         currentPage += 1
-        fetchMovies(completion)
+        if isSearching() {
+            searchMovie(completion)
+        } else {
+            fetchMovies(completion)
+        }
     }
 }

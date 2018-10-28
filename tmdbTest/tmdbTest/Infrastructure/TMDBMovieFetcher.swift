@@ -21,6 +21,9 @@ class TMDBMovieFetcher: MovieFetcher {
         static var movieEndpoint: String {
             return baseUrl + "/movie/"
         }
+        static var searchEndpoint: String {
+            return baseUrl + "/search/movie"
+        }
         static let posterBaseUrl = "https://image.tmdb.org/t/p/w500"
         static let bannerBaseUrl = "https://image.tmdb.org/t/p/original"
         static let apiSecret = "1f54bd990f1cdfb230adb312546d765d"
@@ -37,24 +40,27 @@ class TMDBMovieFetcher: MovieFetcher {
     func upcomingMovies(model: UpcomingMovies, completion: @escaping MovieListCallback) {
         let request = MovieListRequest(apiKey: Constants.apiSecret, page: model.currentPage)
         backendClient.request(Constants.upcomingEndpoint, method: .get, parameters: request) { [weak self] (callback) in
-            do {
-                guard let result = try callback() else {
-                    throw ApiError.emptyResponse
-                }
-
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .formatted(DateFormatter.americanFormat)
-                var movies: MovieList = try decoder.decode(MovieList.self, from: result.data)
-                let urlResolvedMovies = movies.results?.map({ (movie: Movie) -> Movie in
-                    var urlResolvedMovie = movie
-                    self?.resolveURLs(&urlResolvedMovie)
-                    return urlResolvedMovie
-                })
-                movies.results = urlResolvedMovies
-                completion { return movies }
-            } catch {
-                completion { throw error }
+            self?.moviesResponse( callback, completion: completion)
+        }
+    }
+    
+    func moviesResponse(_ callback: @escaping () throws -> NetworkData?, completion: @escaping MovieListCallback) {
+        do {
+            guard let result = try callback() else {
+                throw ApiError.emptyResponse
             }
+            
+            let decoder = JSONDecoder()
+            var movies: MovieList = try decoder.decode(MovieList.self, from: result.data)
+            let urlResolvedMovies = movies.results?.map({ (movie: Movie) -> Movie in
+                var urlResolvedMovie = movie
+                resolveURLs(&urlResolvedMovie)
+                return urlResolvedMovie
+            })
+            movies.results = urlResolvedMovies
+            completion { return movies }
+        } catch {
+            completion { throw error }
         }
     }
     
@@ -72,7 +78,6 @@ class TMDBMovieFetcher: MovieFetcher {
                 }
                 
                 let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .formatted(DateFormatter.americanFormat)
                 var movie: Movie = try decoder.decode(Movie.self, from: result.data)
                 self?.resolveURLs(&movie)
                 completion { return movie }
@@ -81,4 +86,12 @@ class TMDBMovieFetcher: MovieFetcher {
             }
         }
     }
+    
+    func searchMovie(model: UpcomingMovies, completion: @escaping MovieListCallback) {
+        let request = SearchMovieRequest(apiKey: Constants.apiSecret, searchTerm: model.searchTerm ?? "", page: model.currentPage)
+        backendClient.request(Constants.searchEndpoint, method: .get, parameters: request) { [weak self] (callback) in
+            self?.moviesResponse( callback, completion: completion)
+        }
+    }
+    
 }
