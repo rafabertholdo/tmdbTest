@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,14 +36,12 @@
 		DA44266D21835736003DB085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA44266C21835736003DB085 /* Assets.xcassets */; };
 		DA44267021835736003DB085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA44266E21835736003DB085 /* LaunchScreen.storyboard */; };
 		DA44267B21835736003DB085 /* UpcomingMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA44267A21835736003DB085 /* UpcomingMoviesTests.swift */; };
-		DA44268621835736003DB085 /* tmdbTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA44268521835736003DB085 /* tmdbTestUITests.swift */; };
 		DA45A19521863DA400219DCB /* SearchMovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA45A19421863DA400219DCB /* SearchMovieRequest.swift */; };
 		DA45A1972186424D00219DCB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA45A1962186424D00219DCB /* String.swift */; };
 		DA45A199218651B300219DCB /* MovieFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA45A198218651B300219DCB /* MovieFetcherMock.swift */; };
 		DAA3A0D42185055100907E7E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA3A0D32185055100907E7E /* DateFormatter.swift */; };
 		DAA3A0D62185062D00907E7E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA3A0D52185062D00907E7E /* Date.swift */; };
 		DAA3A0D82185076E00907E7E /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA3A0D72185076E00907E7E /* UILabel.swift */; };
-		E37DB5026E97EDB965593734 /* Pods_tmdbTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE7D41F538896B5DD9C4E5D /* Pods_tmdbTestUITests.framework */; };
 		E5896171A3D3FA8A833D358B /* Pods_tmdbTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11543164AE43D7CB44BF0A1 /* Pods_tmdbTestTests.framework */; };
 		F1047C30CC1392BC0435A292 /* Pods_tmdbTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7338026D444630C333DBC96 /* Pods_tmdbTest.framework */; };
 /* End PBXBuildFile section */
@@ -56,20 +54,10 @@
 			remoteGlobalIDString = DA44266121835735003DB085;
 			remoteInfo = tmdbTest;
 		};
-		DA44268221835736003DB085 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA44265A21835735003DB085 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA44266121835735003DB085;
-			remoteInfo = tmdbTest;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03E56903C67E057CC0612074 /* Pods-tmdbTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdbTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tmdbTestUITests/Pods-tmdbTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		92149D63A3BD8108A185B4DD /* Pods-tmdbTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdbTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tmdbTestUITests/Pods-tmdbTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9348ABA7C2495F089E68206F /* Pods-tmdbTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdbTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-tmdbTest/Pods-tmdbTest.release.xcconfig"; sourceTree = "<group>"; };
-		AEE7D41F538896B5DD9C4E5D /* Pods_tmdbTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdbTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9B790C325CB6628B556F8E /* Pods-tmdbTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdbTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tmdbTest/Pods-tmdbTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C072E10D8B108B640FB964C1 /* Pods-tmdbTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdbTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tmdbTestTests/Pods-tmdbTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7338026D444630C333DBC96 /* Pods_tmdbTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdbTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,9 +94,6 @@
 		DA44267621835736003DB085 /* tmdbTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tmdbTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA44267A21835736003DB085 /* UpcomingMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesTests.swift; sourceTree = "<group>"; };
 		DA44267C21835736003DB085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA44268121835736003DB085 /* tmdbTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tmdbTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA44268521835736003DB085 /* tmdbTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmdbTestUITests.swift; sourceTree = "<group>"; };
-		DA44268721835736003DB085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA44269421835758003DB085 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		DA45A19421863DA400219DCB /* SearchMovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieRequest.swift; sourceTree = "<group>"; };
 		DA45A1962186424D00219DCB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -137,14 +122,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA44267E21835736003DB085 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E37DB5026E97EDB965593734 /* Pods_tmdbTestUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -153,7 +130,6 @@
 			children = (
 				D7338026D444630C333DBC96 /* Pods_tmdbTest.framework */,
 				E11543164AE43D7CB44BF0A1 /* Pods_tmdbTestTests.framework */,
-				AEE7D41F538896B5DD9C4E5D /* Pods_tmdbTestUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,7 +217,6 @@
 			children = (
 				DA44266421835735003DB085 /* tmdbTest */,
 				DA44267921835736003DB085 /* tmdbTestTests */,
-				DA44268421835736003DB085 /* tmdbTestUITests */,
 				DA44266321835735003DB085 /* Products */,
 				F1E724DA04F2B6FA50DC3B26 /* Pods */,
 				93A38B8C27CFB4A73D284364 /* Frameworks */,
@@ -253,7 +228,6 @@
 			children = (
 				DA44266221835735003DB085 /* tmdbTest.app */,
 				DA44267621835736003DB085 /* tmdbTestTests.xctest */,
-				DA44268121835736003DB085 /* tmdbTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,15 +261,6 @@
 			path = tmdbTestTests;
 			sourceTree = "<group>";
 		};
-		DA44268421835736003DB085 /* tmdbTestUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DA44268521835736003DB085 /* tmdbTestUITests.swift */,
-				DA44268721835736003DB085 /* Info.plist */,
-			);
-			path = tmdbTestUITests;
-			sourceTree = "<group>";
-		};
 		F1E724DA04F2B6FA50DC3B26 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,8 +268,6 @@
 				9348ABA7C2495F089E68206F /* Pods-tmdbTest.release.xcconfig */,
 				FBB05E96E20CC0026802C281 /* Pods-tmdbTestTests.debug.xcconfig */,
 				C072E10D8B108B640FB964C1 /* Pods-tmdbTestTests.release.xcconfig */,
-				03E56903C67E057CC0612074 /* Pods-tmdbTestUITests.debug.xcconfig */,
-				92149D63A3BD8108A185B4DD /* Pods-tmdbTestUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -351,25 +314,6 @@
 			productReference = DA44267621835736003DB085 /* tmdbTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DA44268021835736003DB085 /* tmdbTestUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA44269021835736003DB085 /* Build configuration list for PBXNativeTarget "tmdbTestUITests" */;
-			buildPhases = (
-				39647145586A22813D068F2A /* [CP] Check Pods Manifest.lock */,
-				DA44267D21835736003DB085 /* Sources */,
-				DA44267E21835736003DB085 /* Frameworks */,
-				DA44267F21835736003DB085 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA44268321835736003DB085 /* PBXTargetDependency */,
-			);
-			name = tmdbTestUITests;
-			productName = tmdbTestUITests;
-			productReference = DA44268121835736003DB085 /* tmdbTestUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -384,10 +328,6 @@
 						CreatedOnToolsVersion = 10.0;
 					};
 					DA44267521835736003DB085 = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = DA44266121835735003DB085;
-					};
-					DA44268021835736003DB085 = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = DA44266121835735003DB085;
 					};
@@ -408,7 +348,6 @@
 			targets = (
 				DA44266121835735003DB085 /* tmdbTest */,
 				DA44267521835736003DB085 /* tmdbTestTests */,
-				DA44268021835736003DB085 /* tmdbTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,13 +364,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DA44267421835736003DB085 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA44267F21835736003DB085 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -479,28 +411,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-tmdbTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		39647145586A22813D068F2A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-tmdbTestUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -591,14 +501,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA44267D21835736003DB085 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA44268621835736003DB085 /* tmdbTestUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -606,11 +508,6 @@
 			isa = PBXTargetDependency;
 			target = DA44266121835735003DB085 /* tmdbTest */;
 			targetProxy = DA44267721835736003DB085 /* PBXContainerItemProxy */;
-		};
-		DA44268321835736003DB085 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA44266121835735003DB085 /* tmdbTest */;
-			targetProxy = DA44268221835736003DB085 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -829,46 +726,6 @@
 			};
 			name = Release;
 		};
-		DA44269121835736003DB085 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03E56903C67E057CC0612074 /* Pods-tmdbTestUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = tmdbTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bertholdo.tmdbTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = tmdbTest;
-			};
-			name = Debug;
-		};
-		DA44269221835736003DB085 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92149D63A3BD8108A185B4DD /* Pods-tmdbTestUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = tmdbTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bertholdo.tmdbTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = tmdbTest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -895,15 +752,6 @@
 			buildConfigurations = (
 				DA44268E21835736003DB085 /* Debug */,
 				DA44268F21835736003DB085 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DA44269021835736003DB085 /* Build configuration list for PBXNativeTarget "tmdbTestUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA44269121835736003DB085 /* Debug */,
-				DA44269221835736003DB085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

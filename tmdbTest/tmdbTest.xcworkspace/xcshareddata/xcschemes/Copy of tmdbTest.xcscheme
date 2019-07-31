@@ -38,16 +38,6 @@
                ReferencedContainer = "container:tmdbTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA44268021835736003DB085"
-               BuildableName = "tmdbTestUITests.xctest"
-               BlueprintName = "tmdbTestUITests"
-               ReferencedContainer = "container:tmdbTest.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
