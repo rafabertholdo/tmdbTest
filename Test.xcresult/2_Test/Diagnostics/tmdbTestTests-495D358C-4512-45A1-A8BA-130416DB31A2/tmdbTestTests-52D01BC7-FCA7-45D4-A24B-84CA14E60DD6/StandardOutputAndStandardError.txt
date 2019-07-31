@@ -1,0 +1,24 @@
+2019-07-31 17:12:46.433536-0300 tmdbTest[28584:338697] libMobileGestalt MobileGestalt.c:890: MGIsDeviceOneOfType is not supported on this platform.
+Test Suite 'All tests' started at 2019-07-31 17:12:46.897
+Test Suite 'tmdbTestTests.xctest' started at 2019-07-31 17:12:46.900
+Test Suite 'UpcomingMoviesTests' started at 2019-07-31 17:12:46.900
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testFetchMovies]' started.
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testFetchMovies]' passed (0.003 seconds).
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testInitialState]' started.
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testInitialState]' passed (0.001 seconds).
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testIsSearching]' started.
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testIsSearching]' passed (0.002 seconds).
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testLoadNextPageWithoutSearch]' started.
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testLoadNextPageWithoutSearch]' passed (0.004 seconds).
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testLoadNextPageWithSearch]' started.
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testLoadNextPageWithSearch]' passed (0.002 seconds).
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testSearchMovie]' started.
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testSearchMovie]' passed (0.001 seconds).
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testSearchShouldResetDataAndPageNumber]' started.
+Test Case '-[tmdbTestTests.UpcomingMoviesTests testSearchShouldResetDataAndPageNumber]' passed (0.003 seconds).
+Test Suite 'UpcomingMoviesTests' passed at 2019-07-31 17:12:46.924.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.016 (0.024) seconds
+Test Suite 'tmdbTestTests.xctest' passed at 2019-07-31 17:12:46.924.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.016 (0.025) seconds
+Test Suite 'All tests' passed at 2019-07-31 17:12:46.925.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.016 (0.028) seconds

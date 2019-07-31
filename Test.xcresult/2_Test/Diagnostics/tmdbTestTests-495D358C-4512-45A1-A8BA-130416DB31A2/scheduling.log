@@ -1,0 +1,5 @@
+2019-07-31 20:12:17 +0000: Received worker from worker provider: 0x7fdba63f07e0 [0: iPhone 6 Plus (29CE6445-9E8C-4685-85A3-DF270CFC8BFD)]
+2019-07-31 20:12:46 +0000: Worker 0x7fdba63f07e0 [28584: iPhone 6 Plus (29CE6445-9E8C-4685-85A3-DF270CFC8BFD)] finished bootstrapping
+2019-07-31 20:12:46 +0000: Parallelization disabled; test execution driven by the test process
+2019-07-31 20:12:47 +0000: Worker 0x7fdba63f07e0 [28584: iPhone 6 Plus (29CE6445-9E8C-4685-85A3-DF270CFC8BFD)] finished successfully
+2019-07-31 20:12:47 +0000: Finished executing tests (cancelled: No)
