@@ -653,7 +653,8 @@
 			baseConfigurationReference = BA9B790C325CB6628B556F8E /* Pods-tmdbTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = H38JKR6Z26;
 				INFOPLIST_FILE = tmdbTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -662,6 +663,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.tmdbTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Teste Bitrise Development";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -672,8 +674,9 @@
 			baseConfigurationReference = 9348ABA7C2495F089E68206F /* Pods-tmdbTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QGXBS864G7;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H38JKR6Z26;
 				INFOPLIST_FILE = tmdbTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -681,6 +684,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.tmdbTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Teste Bitrise ad-hoc";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
